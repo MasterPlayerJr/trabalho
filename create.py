@@ -1,0 +1,2 @@
+def criar():
+    print("")
