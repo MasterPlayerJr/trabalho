@@ -1,0 +1,133 @@
+Projeto CRUD Rudimentar
+
+Nesse projeto vocês irão implementar um sistema de gerenciamento de alunos.
+O sistema será dividido em módulos, cada módulo pode ser feito na ordem que desejar,
+cada módulo deverá ser feito em um arquivo diferente
+
+As informações de cada aluno serão:
+
+id -> identificador do aluno, deve ser único
+nome -> um texto representando o nome do aluno
+matricula -> um texto, pode ser letras e/ou números
+idade -> numero inteiro
+nota -> numero com ponto
+
+As informações dos alunos deverão ser salvas em um arquivo que tenha a extensão .csv
+ex: banco_de_dados.csv
+
+Esse arquivo deverá ter como primeiras linhas o seguinte:
+
+sep=;
+id;nome;matricula;idade;nota
+
+Cada dado de um aluno deverá ser salvo no arquivo da seguinte forma:
+
+id;nome;matricula;idade;nota
+
+ex: 1;Danilo;abc123;25;53
+
+Os módulos a serem feitos são:
+
+1-menu
+2-cadastro de aluno
+3-listar todos os alunos
+4-listar aluno em específico
+5-atualizar aluno
+6-excluir aluno
+7-media
+8-main
+
+1-módulo menu
+
+criar uma função que lista todas as opções de 2 a 7 com o nome de cada operação na tela
+e que em seguida peça para o usúario digitar um número.
+Se o número estiver entre o intervalo de opções válidas, retornar o número,
+se não, repetir o menu novamente.
+exibir também uma opção 0, que seria a opção de sair
+
+2-módulo cadastro de aluno
+
+criar uma função que peça ao usuário os dados de um aluno (nome, matricula, idade e nota)
+abrir o arquivo .csv em modo de escrita "a" e escrever os dados informados no arquivo no 
+formato "id;nome;matricula;idade;nota". o id deverá ser um número gerado automaticamente,
+que começa no 1 e vai auto-incrementando de um em um a cada aluno cadastrado.
+importante: cada aluno deverá ocupar uma linha do arquivo
+
+no final do modulo, fechar o arquivo
+
+3-módulo listar todos os alunos
+
+criar uma função que abra o arquivo .csv em modo de leitura "r", leia todo o conteudo do arquivo,
+e mostre na tela cada aluno no formato:
+
+id: 23
+nome: Danilo
+matricula: 68468
+idade: 25
+nota: 67.8
+
+no final do modulo, fechar o arquivo
+
+4-módulo listar aluno em específico
+
+criar uma função que peça para o usuário informar um id, em seguida abra o arquivo .csv em modo de leitura "r",
+ao abrir o arquivo, ler o conteudo e salvar em uma lista de forma que cada registro de aluno seja um elemento
+da lista, percorrer a lista, verificando se o id do aluno é igual ao id informado pelo usuário,
+se for igual, mostrar registro do aluno na tela no formato:
+
+id: 23
+nome: Danilo
+matricula: 68468
+idade: 25
+nota: 67.8
+
+caso não exista nenhum aluno com o id informado, mostrar na tela "aluno não encontrado"
+
+no final do modulo, fechar o arquivo
+
+5-módulo atualizar aluno
+
+criar uma função que peça para o usuário informar um id, em seguida abra o arquivo .csv em modo de leitura "r",
+ao abrir o arquivo, ler o conteudo e salvar em uma lista de forma que cada registro de aluno seja um elemento
+da lista, percorrer a lista, verificando se o id do aluno é igual ao id informado pelo usuário,
+se for igual, pedir para o usuário os novos dados do aluno e substituir na mesma posição da lista. 
+fechar o arquivo
+
+abrir novamente o arquivo .csv em modo de escrita "w" e escrever toda a lista no arquivo
+
+caso não exista nenhum aluno com o id informado, mostrar na tela "aluno não encontrado"
+
+no final do modulo, fechar o arquivo
+
+6-módulo excluir aluno
+
+criar uma função que peça para o usuário informar um id, em seguida abra o arquivo .csv em modo de leitura "r",
+ao abrir o arquivo, ler o conteudo e salvar em uma lista de forma que cada registro de aluno seja um elemento
+da lista, percorrer a lista, verificando se o id do aluno é igual ao id informado pelo usuário,
+se for igual, remover elemento da lista. fechar o arquivo
+
+abrir novamente o arquivo .csv em modo de escrita "w" e escrever toda a lista no arquivo
+
+caso não exista nenhum aluno com o id informado, mostrar na tela "aluno não encontrado"
+
+no final do modulo, fechar o arquivo
+
+7-módulo calcular media dos alunos
+
+criar uma função que abra o arquivo .csv em modo de leitura "r",
+ao abrir o arquivo, ler o conteudo e salvar em uma lista de forma que cada registro de aluno seja um elemento
+da lista, percorrer a lista, somando as notas de cada aluno, no final dividir esse valor
+pela quantidade de alunos cadastrados e mostrar resultado na tela.
+
+no final do modulo, fechar o arquivo
+
+8-módulo calcular media dos alunos
+
+esse módulo sera o módulo principal do sistema, que vai juntar todos os outros módulos
+
+importar todos os módulos feitos até o momento
+
+criar uma função que chame a função menu, a função menu deverá retornar um valor,
+com base nesse valor, deverá ser chamada as outras funções do sistema
+
+vou explicar melhor futuramente
