@@ -1,7 +1,6 @@
 from random import randint
 from functions import limpar
-
-NOME_ARQ_ID = "ultimo_id.txt"
+from env_ambient import NOME_ARQ_ID
 
 def criar_id():
     with open(NOME_ARQ_ID,"r") as arq:
@@ -19,3 +18,4 @@ def criar():
     idade = int(input("Idade do aluno:"))
     nota = float(input("Nota do aluno (0-100):"))
     aluno = [id,nome_escolha,matricula,idade,nota]
+    return aluno
