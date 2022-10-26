@@ -1,14 +1,18 @@
-from env_ambient import alunos
-from functions import limpar
+from functions import limpar,ler_alunos,salvar_arq
 
 def deletar():
     fechar = False
     while not fechar:
         limpar(0)
+        alunos = ler_alunos()
+        print(len(alunos))
         print(" == Deletar Aluno ==")
         escolha_id = input("Escolha o id a ser deletado:")
-        for i in range(len(alunos)):
+        for i in range((len(alunos) - 1)):
             if alunos[i][0] == escolha_id:
                 alunos.pop(i)
+                salvar_arq(alunos)
                 fechar = True
-    return alunos
+        input("Sucesso ao deletar aluno!")
+
+deletar()
