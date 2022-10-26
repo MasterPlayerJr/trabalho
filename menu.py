@@ -13,3 +13,5 @@ def menu():
         print("0 - Sair")
         escolha = input("")
         return escolha 
+
+print(menu())
