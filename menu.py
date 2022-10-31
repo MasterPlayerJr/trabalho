@@ -1,8 +1,21 @@
 from functions import limpar
 
 def menu():
-    limpar(0)
-    print(" == Matricula == ")
-    print("")
-    escolha = input("")
-    return escolha
+    while True:
+        limpar(0)
+        print(" == Matricula == ")
+        print("1 - Cadastro de Aluno")
+        print("2 - Listar Todos os Alunos")
+        print("3 - Listar Aluno em Especifico")
+        print("4 - Atualizar Aluno")
+        print("5 - Excluir Aluno")
+        print("6 - Media do Aluno")
+        print("0 - Sair")
+        escolha = int(input("Escolha uma opcao: "))
+
+        if escolha >= 0 and escolha <= 6:
+            return escolha
+            break
+        
+
+print(menu())
