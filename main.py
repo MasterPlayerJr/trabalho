@@ -1,23 +1,16 @@
 from menu import menu
 from create import criar
+from delete import deletar
+from functions import salvar_arq
 
-NOME_DATABASE = "database.csv"
-alunos = []
-
-def salvar_arq():
-    with open(NOME_DATABASE,"w") as arq:
-        sep = arq.readline() # Lendo primeira linhas
-        variaveis = arq.readline() # Lendo segunda linha  
-        arq.writelines((sep,"\n"))
-        arq.writelines((variaveis,"\n"))
-        for i in range((len(arq.readlines()))):
-            aluno = ';'.join(alunos[i])
-            arq.writelines((aluno,"\n"))
-            
-    
 def main():
     escolha = menu()
-    if escolha == "+":
-        aluno = criar()
-        
-salvar_arq()
+    if escolha == "1":
+        alunos = criar()
+    elif escolha == "5":
+        alunos = deletar()
+    elif escolha == "s":
+        salvar_arq(alunos)
+
+while True:
+    main()
