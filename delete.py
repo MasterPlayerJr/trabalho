@@ -5,7 +5,6 @@ def deletar():
     while not fechar:
         limpar(0)
         alunos = ler_alunos()
-        print(len(alunos))
         print(" == Deletar Aluno ==")
         escolha_id = input("Escolha o id a ser deletado:")
         for i in range((len(alunos) - 1)):
