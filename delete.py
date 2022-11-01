@@ -7,10 +7,9 @@ def deletar():
         alunos = ler_alunos()
         print(" == Deletar Aluno ==")
         escolha_id = input("Escolha o id a ser deletado:")
-        for i in range((len(alunos) - 1)):
+        for i in range((len(alunos))):
             if alunos[i][0] == escolha_id:
                 alunos.pop(i)
-                print(alunos)
                 salvar_arq(alunos)
                 fechar = True
         input("Sucesso ao deletar aluno!")

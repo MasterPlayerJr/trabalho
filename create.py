@@ -19,12 +19,12 @@ def criar():
     id = criar_id()
     aluno = [id,nome_escolha,matricula,idade,nota]
     with open(NOME_DATABASE,'a') as arq:
+        arq.write("\n")
         for i in range(len(aluno)):
             if i == (len(aluno) - 1):
                 arq.writelines(f"{aluno[i]}")
             else:
                 arq.writelines(f"{aluno[i]};")
-        arq.write("\n")
     input("Sucesso ao criar aluno!")
 
 criar()
