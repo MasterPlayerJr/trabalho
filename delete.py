@@ -10,6 +10,7 @@ def deletar():
         for i in range((len(alunos) - 1)):
             if alunos[i][0] == escolha_id:
                 alunos.pop(i)
+                print(alunos)
                 salvar_arq(alunos)
                 fechar = True
         input("Sucesso ao deletar aluno!")
