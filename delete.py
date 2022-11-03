@@ -13,5 +13,3 @@ def deletar():
                 salvar_arq(alunos)
                 fechar = True
         input("Sucesso ao deletar aluno!")
-
-deletar()
