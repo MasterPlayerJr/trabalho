@@ -34,5 +34,3 @@ def ler_alunos():
             aluno = arq.readline().split(";")
             alunos.append(aluno)
     return alunos
-
-ler_alunos()
