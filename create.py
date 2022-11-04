@@ -16,7 +16,7 @@ def criar():
     matricula = randint(0,100000)
     idade = int(input("Idade do aluno:"))
     while True:
-        if idade < 0 or idade > 100:
+        if idade < 0:
             idade = int(input("Idade invalida! Digite novamente:"))
         else:
             break
