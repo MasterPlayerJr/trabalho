@@ -7,6 +7,10 @@ def deletar():
         alunos = ler_alunos()
         print(" == Deletar Aluno ==")
         escolha_id = input("Escolha o id a ser deletado:")
+        for aluno in alunos:
+            if aluno[0] != escolha_id:
+                print("Id do aluno inexistente")
+
         for i in range((len(alunos))):
             if alunos[i][0] == escolha_id:
                 alunos.pop(i)
