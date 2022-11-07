@@ -10,13 +10,17 @@ def editar():
             alunos[i][1] = input("Escreva o nome:")
             alunos[i][2] = randint(1,100000)
             alunos[i][3] = input("Informe a idade:")
-            if alunos[i][3] < 0:
-                alunos[i][3] = int(input("Idade invalida! Digite novamente:"))
-            else:
-                break
+            while True:
+                if alunos[i][3] < 0:
+                    alunos[i][3] = int(input("Idade invalida! Digite novamente:"))
+                else:
+                    break
             alunos[i][4] = int(input("Escreva a nova nota:"))
-            if alunos[i][3] < 0 or alunos[i][3] > 100:
-                alunos[i][3] = int(input("Idade invalida! Digite novamente:"))
+            while True:
+                if alunos[i][3] < 0 or alunos[i][3] > 100:
+                    alunos[i][3] = int(input("Idade invalida! Digite novamente:"))
+                else:
+                    break
     salvar_arq(alunos)
 
 editar()
