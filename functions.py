@@ -1,6 +1,6 @@
 import os
 from time import sleep
-from env_ambient import NOME_DATABASE,ultimo_id
+from env_ambient import NOME_DATABASE,quant_linhas
 
 def limpar(tempo):
     sleep(tempo)
@@ -14,14 +14,14 @@ def lista_str(lista):
 def salvar_arq(alunos_save):
     with open(NOME_DATABASE,"w") as arq:
         arq.writelines("sep=; \n")
-        arq.writelines("id;nome;matricula;idade;nota \n")
+        arq.writelines("id;nome;matricula;idade;nota")
         for i in range(0,len(alunos_save)):
             try:
-                print(alunos_save)
                 alunos_str = lista_str(alunos_save[i])
                 alunos_str = ";".join(alunos_str)
-                print(alunos_str)
-                arq.writelines(f"{alunos_str}\n")
+                if alunos_str[-1] == "\n":
+                    alunos_str = alunos_str[0:-1]
+                arq.writelines(f"\n{alunos_str}")
             except IndexError:
                 continue
 
@@ -30,10 +30,7 @@ def ler_alunos():
     with open(NOME_DATABASE,'r+') as arq:
         arq.readline()
         arq.readline()
-        for i in range(0,ultimo_id):
+        for i in range(0,(quant_linhas - 2)):
             aluno = arq.readline().split(";")
-            if aluno != '':
-                if len(aluno) > 5:
-                    aluno.pop()
-                alunos.append(aluno)
+            alunos.append(aluno)
     return alunos

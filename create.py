@@ -15,16 +15,24 @@ def criar():
     nome_escolha = input("Nome do Aluno:")
     matricula = randint(0,100000)
     idade = int(input("Idade do aluno:"))
+    while True:
+        if idade < 0:
+            idade = int(input("Idade invalida! Digite novamente:"))
+        else:
+            break
     nota = float(input("Nota do aluno(0-100):"))
+    while True:
+        if nota < 0 or nota > 100:
+            nota = float(input("Nota invalida! Digite novamente:"))
+        else:
+            break
     id = criar_id()
     aluno = [id,nome_escolha,matricula,idade,nota]
     with open(NOME_DATABASE,'a') as arq:
+        arq.write("\n")
         for i in range(len(aluno)):
             if i == (len(aluno) - 1):
                 arq.writelines(f"{aluno[i]}")
             else:
                 arq.writelines(f"{aluno[i]};")
-        arq.write("\n")
     input("Sucesso ao criar aluno!")
-
-criar()
