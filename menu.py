@@ -11,11 +11,10 @@ def menu():
         print("5 - Excluir Aluno")
         print("6 - Media do Aluno")
         print("0 - Sair")
-        escolha = int(input("Escolha uma opcao: "))
+        escolha = input("Escolha uma opcao:")
 
-        if escolha >= 0 and escolha <= 6:
-            return escolha
-            break
-        
-
-print(menu())
+        if escolha.isdigit():
+            escolha = int(escolha)
+            if escolha >= 0 and escolha <= 6:
+                return escolha
+                break

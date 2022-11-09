@@ -1,5 +1,7 @@
 sep=; 
-id;nome;matricula;idade;nota 
-1;Evaldo Soares Junior;74356;15;60.0
-2;Danilo;60472;25;100.0
-4;Marcos;69539;15;20.0
+id;nome;matricula;idade;nota
+
+1;Evaldo;12139;15;60.0
+2;Marcos;84754;15;80.0
+3;Danilo;44803;25;11.0
+4;Aluno;62996;100;0.0

@@ -6,14 +6,13 @@ def deletar():
     alunos = ler_alunos()
     print(" == Deletar Aluno ==")
     escolha_id = input("Escolha o id a ser deletado:")
-    for i in range(quant_linhas - 2):
-        if alunos[i][0] != escolha_id:
-            print("Id do aluno inexistente!")
-            break
+    found = False
     for i in range(quant_linhas - 2):
         if alunos[i][0] == escolha_id:
+            found = True
             alunos.pop(i)
             salvar_arq(alunos)
+            input("Aluno deletado com sucesso!")
             break
-
-deletar()
+    if not found:
+        input("Aluno não encontrado!")

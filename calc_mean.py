@@ -10,11 +10,7 @@ def media():
         if nota[-1] == "\n":
             nota = nota[0:-1]
         notas.append(float(nota))
-    print(notas)
     quant_notas = len(notas)
     soma = sum(notas)
-    print(soma)
     media = soma / quant_notas
-    print("A media de notas è", media)
-
-media()
+    input(f"A media de notas é de {media}")

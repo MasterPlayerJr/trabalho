@@ -1,6 +1,6 @@
 from random import randint
 from functions import limpar
-from env_ambient import NOME_ARQ_ID,NOME_DATABASE, ultimo_id
+from env_ambient import NOME_ARQ_ID,NOME_DATABASE
 
 def criar_id():
     with open(NOME_ARQ_ID,"r") as arq:
@@ -12,7 +12,7 @@ def criar_id():
 def criar():
     limpar(0)
     print(" == Criar Aluno == ")
-    nome_escolha = input("Nome do Aluno:")
+    nome_escolha = input("Nome do aluno:")
     matricula = randint(0,100000)
     idade = int(input("Idade do aluno:"))
     while True:
